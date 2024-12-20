@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+ <meta charset="UTF-8">
+
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <title>jQuery Demo</title>
+
+ <!-- Include jQuery from a CDN -->
+
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+ <style>
+
+ #message {
+
+ background-color: lightyellow;
+
+ padding: 20px;
+
+ margin-top: 20px;
+
+ display: none;
+
+ }
+
+ button {
+
+ padding: 10px 20px;
+
+ background-color: lightblue;
+
+ border: none;
+
+ cursor: pointer;
+
+ }
+
+ </style>
+
+</head>
+
+<body>
+
+ <h1>jQuery Demonstration</h1>
+
+ <button id="toggleButton">Show Message</button>
+
+ 
+
+ <div id="message">
+
+ <h2>Welcome to the jQuery Demo!</h2>
+
+ <p>This is a simple demonstration of how jQuery can be used to manipulate the DOM.</p>
+
+ </div>
+
+ <script>
+
+ $(document).ready(function() {
+
+ // When the button is clicked, toggle the visibility of the message div
+
+ $('#toggleButton').click(function() {
+
+ $('#message').toggle();
+
+ // Change button text based on message visibility
+
+ if ($('#message').is(':visible')) {
+
+ $('#toggleButton').text('Hide Message');
+
+ } else {
+$('#toggleButton').text('Show Message');
+
+ }
+
+ });
+
+ });
+
+ </script>
+
+</body>
+
+</html>
+
+Output:
