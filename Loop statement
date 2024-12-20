@@ -1,0 +1,79 @@
+let i = 0;
+
+// Conditional Statements
+
+if (i < 5) {
+
+ console.log("i is less than 5");
+
+} else if (i === 5) {
+
+ console.log("i is equal to 5");
+
+} else {
+
+ console.log("i is greater than 5");
+
+}
+
+// Switch Statement
+
+switch (i) {
+
+ case 0:
+
+ console.log("i is zero");
+
+ break;
+
+ case 1:
+
+ console.log("i is one");
+
+ break;
+
+ default:
+
+ console.log("i is neither zero nor one");
+
+}
+
+// For Loop
+
+console.log("For Loop:");
+
+for (let j = 0; j < 3; j++) {
+
+ console.log("j is", j);
+
+}
+
+// While Loop
+
+console.log("While Loop:");
+
+let k = 0;
+
+while (k < 3) {
+
+ console.log("k is", k);
+
+ k++;
+
+}
+
+// Do-While Loop
+
+console.log("Do-While Loop:");
+
+let l = 0;
+
+do {
+
+ console.log("l is", l);
+
+ l++;
+
+} 
+
+while (l < 3);
