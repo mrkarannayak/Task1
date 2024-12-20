@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+ <meta charset="UTF-8">
+
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <title>Dynamic Web Form with Validation</title>
+
+ <style>
+
+ body {
+
+ font-family: Arial, sans-serif;
+
+ background-color: #f0f0f0;
+
+ display: flex;
+
+ justify-content: center;
+
+ align-items: center;
+
+ height: 100vh;
+
+ }
+
+ .form-container {
+
+ background-color: white;
+
+ padding: 20px;
+
+ border-radius: 8px;
+
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+ width: 300px;
+
+ }
+
+ .form-container h2 {
+
+ text-align: center;
+
+ margin-bottom: 20px;
+
+ }
+
+ .form-container input {
+
+ width: 100%;
+
+ padding: 8px;
+
+ margin: 10px 0;
+
+ border: 1px solid #ddd;
+
+ border-radius: 4px;
+
+ }
+
+ .form-container button {
+
+ width: 100%;
+
+ padding: 10px;
+
+ background-color: #4CAF50;
+
+ color: white;
+
+ border: none;
+
+ border-radius: 4px;
+
+ cursor: pointer;
+
+ }
+
+ .form-container button:hover {
+
+ background-color: #45a049;
+
+ }
+
+ .error {
+
+ color: red;
+
+ font-size: 12px;
+margin-bottom: 10px;
+
+ }
+
+ </style>
+
+</head>
+
+<body>
+
+ <div class="form-container">
+
+ <h2>Registration Form</h2>
+
+ <form id="registrationForm">
+
+ <div>
+
+ <label for="name">Name:</label>
+
+ <input type="text" id="name" name="name" required>
+
+ <div id="nameError" class="error"></div>
+
+ </div>
+
+ <div>
+
+ <label for="email">Email:</label>
+
+ <input type="email" id="email" name="email" required>
+
+ <div id="emailError" class="error"></div>
+
+ </div>
+
+ <div>
+
+ <label for="age">Age:</label>
+
+ <input type="number" id="age" name="age" required>
+
+ <div id="ageError" class="error"></div>
+
+ </div>
+
+ <button type="submit">Submit</button>
+
+ </form>
+
+ </div>
+
+ <script>
+
+ document.getElementById('registrationForm').addEventListener('submit', function(event) {
+
+ event.preventDefault();
+
+ let valid = true;
+
+ // Reset error messages
+
+ document.getElementById('nameError').innerText = '';
+
+ document.getElementById('emailError').innerText = '';
+
+ document.getElementById('ageError').innerText = '';
+
+ // Validate name
+
+ let name = document.getElementById('name').value;
+
+ if (name === '') {
+
+ valid = false;
+
+ document.getElementById('nameError').innerText = 'Name is required.';
+
+ }
+
+ // Validate email
+
+ let email = document.getElementById('email').value;
+
+ const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+
+ if (!emailPattern.test(email)) {
+
+ valid = false;
+
+ document.getElementById('emailError').innerText = 'Please enter a valid email address.';
+}
+
+ // Validate age
+
+ let age = document.getElementById('age').value;
+
+ if (age < 18 || age > 100) {
+
+ valid = false;
+
+ document.getElementById('ageError').innerText = 'Age must be between 18 and 100.';
+
+ }
+
+ if (valid) {
+
+ alert('Form submitted successfully!');
+
+ }
+
+ });
+
+ </script>
+
+</body>
+
+</html>
